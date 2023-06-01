@@ -12,6 +12,7 @@ public class GUESSING_NUMBER{
         int randomnumber=random.nextInt(highrange-lowrange+1)+lowrange;
         while(!Gwon&&user_attempt<totalattempts) {
             String input = JOptionPane.showInputDialog("GUESS THE NUMBER BETWEEN THE SPECIFIED RANGE" + lowrange + " and " + highrange + ":");
+            user_attempt++;
             if (input == null) {
                 System.out.println("USER WANTS TO EXIT");
                 break;
@@ -20,7 +21,8 @@ public class GUESSING_NUMBER{
             if (guessed_Number == randomnumber) {
                 Gwon = true;
                 score = totalattempts - user_attempt + 1;
-            } else if (guessed_Number < randomnumber) {
+            }
+            else if (guessed_Number < randomnumber) {
                 JOptionPane.showMessageDialog(null, "The number is Higher!Attempts left:" + (totalattempts - user_attempt));
             } else {
                 JOptionPane.showMessageDialog(null, "The number is Lower!Attempts left:" + (totalattempts - user_attempt));
